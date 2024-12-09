@@ -43,6 +43,12 @@ En la ruta `/home/dam/apacheHost` insertamos el siguiente documento html:
 En el navegador si buscamos la siguiente dirección: `http://localhost:8000` aparecerá un "Hola Mundo!"
 
 5. Crea otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
+```bash
+sudo docker run -d --name dam_web2 -p 9080:80 -v /home/dam/apacheHost:/usr/local/apache2/htdocs httpd:2.4 # crea otro contenedor
+
+sudo docker ps -a # comprobación
+```
+
 6. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
    http://localhost:9080
 
