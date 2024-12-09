@@ -41,6 +41,8 @@ En la ruta `/home/dam/apacheHost` insertamos el siguiente documento html:
  </html>
 ```
 En el navegador si buscamos la siguiente dirección: `http://localhost:8000` aparecerá un "Hola Mundo!"
+![holamundo](holamundo.png)
+
 
 5. Crea otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
 ```bash
@@ -50,9 +52,31 @@ sudo docker ps -a # comprobación
 ```
 
 6. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
-   http://localhost:9080
+   - http://localhost:9080
+   - http://localhost:8000
+```bash
+#accedemos a un navegador e introducimos
+ http://localhost:9080 
+ http://localhost:8000
+```
+![holamundo](holamundo.png)
+![holamundo2](holamundo2.png)
 
-   http://localhost:8000
-7. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página
+7. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página.
+```bash
+<html>
+     <head>
+         <title>welcome mundo!</title>
+     </head>
+     <body>
+         <h1>Servicios modificados</h1>
+     </body>
+ </html>
 
+#abrimos un navegador e introducimos
+ http://localhost:9080 
+ http://localhost:8000
+```
+![holamundo3](1.png)
+![holamundo4](2.png)
 
